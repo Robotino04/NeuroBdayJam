@@ -62,7 +62,7 @@ internal sealed class ResourceFile : IDisposable, IEquatable<ResourceFile?> {
 
         Log.WriteLine($"Loading resource file {Name}");
         MemoryStream ms = new MemoryStream();
-        using FileStream fs = new FileStream(ResourceFileFilePath, FileMode.Open);
+        using FileStream fs = new FileStream(ResourceFileFilePath, FileMode.Open, FileAccess.Read);
 
         fs.CopyTo(ms);
         ms.Position = 0;

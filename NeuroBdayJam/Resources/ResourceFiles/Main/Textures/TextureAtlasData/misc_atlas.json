@@ -1,0 +1,12 @@
+{
+    "sound_marker_0": "0,0,16,16",
+    "sound_marker_1": "0,16,16,16",
+    "tutel_brain_off" : "16,0,48,48",
+    "tutel_brain_on": "64,0,48,48",
+    "tutel_brain_static1" : "112,0,48,48",
+    "tutel_brain_static2": "160,0,48,48",
+    "tutel_talk": "208,0,32,32",
+    "ability_camouflage" : "240, 0, 16, 16",
+    "ability_dash" : "208, 32, 32, 32",
+    "ability_stun": "240, 16, 16, 16"
+}

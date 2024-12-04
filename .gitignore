@@ -5,10 +5,10 @@
 
 Config/
 
+NeuroBdayJam/ResourceFilePacker_log.txt
 NeuroBdayJam/Resources/References/
-NeuroBdayJam/Resources/ResourceFiles/Main/
 /NeuroBdayJam/Resources/References/
-/NeuroBdayJam/Resources/ResourceFiles/Main/
+/NeuroBdayJam/Resources/NOTES.txt
 
 # User-specific files
 *.rsuser
@@ -404,6 +404,3 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 *.pdn
-NeuroBdayJam/Resources/ResourceFiles/Main/
-/NeuroBdayJam/Resources/NOTES.txt
-NeuroBdayJam/ResourceFilePacker_log.txt

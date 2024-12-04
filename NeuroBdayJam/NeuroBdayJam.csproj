@@ -66,8 +66,29 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="&quot;$(SolutionDir)ResourceFilePacker/bin/Debug/net7.0/ResourceFilePacker&quot; $(ProjectDir)Resources/ResourceFiles/ $(ProjectDir)Resources/" />
+  <!--
+<Target Name="PostBuild" BeforeTargets="PostBuildEvent">
+  <Exec Command="&quot;$(ProjectDir)/../ResourceFilePacker/bin/Debug/net7.0/ResourceFilePacker&quot; $(ProjectDir)Resources/ResourceFiles/ " />
   </Target>
+  -->
+
+  <ItemGroup>
+      <ThemeFile Include="$(ProjectDir)Resources/ResourceFiles/*/colors.json"/>
+  </ItemGroup>
+
+  <Target Name="CreateMainDat" AfterTargets="Build" Outputs="%(ThemeFile.Identity)">
+      <PropertyGroup>
+        <ComponentDir>@(ThemeFile->'%(rootdir)%(directory)')</ComponentDir>
+        <ComponentName>$(ComponentDir.TrimEnd('/'))</ComponentName>
+      </PropertyGroup>
+
+        <!-- <Exec Command="echo Q $(ComponentName) QQQQQQQQQQQQQQQQQQ $(ComponentDir)" /> -->
+
+        <ZipDirectory
+            SourceDirectory="$(ComponentDir)"
+            DestinationFile="$(ComponentName).dat"
+            Overwrite="true"
+        />
+    </Target>
 
 </Project>
