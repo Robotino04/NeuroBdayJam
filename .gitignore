@@ -5,6 +5,11 @@
 
 Config/
 
+*.dat
+/log.txt
+/result
+NeuroBdayJam/Resources/ResourceFiles/*.dat
+
 NeuroBdayJam/ResourceFilePacker_log.txt
 NeuroBdayJam/Resources/References/
 /NeuroBdayJam/Resources/References/

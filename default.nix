@@ -4,9 +4,9 @@ in
   pkgs.buildDotnetModule rec {
     pname = "Neuro-recall-reverie";
     version = "0.0.1";
-    src = ./.;
+    src = ./NeuroBdayJam;
 
-    projectFile = "NeuroBdayJam/NeuroBdayJam.csproj";
+    projectFile = "NeuroBdayJam.csproj";
     nugetDeps = ./deps.nix;
 
     dotnet-sdk = pkgs.dotnetCorePackages.sdk_7_0;
@@ -29,7 +29,7 @@ in
 
     fixupPhase = ''
       mkdir -p $out/bin/Resources/
-      cp ./NeuroBdayJam/Resources/ResourceFiles/*.dat $out/bin/Resources/
+      cp ./Resources/ResourceFiles/*.dat $out/bin/Resources/
 
       wrapProgram $out/bin/NeuroRecallReverie \
         --set NEURO_RECALL_REVERIE_RESOURCES $out/bin/Resources/
